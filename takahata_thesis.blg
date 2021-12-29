@@ -1,0 +1,52 @@
+This is pBibTeX, Version 0.99d-j0.33 (utf8.euc) (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: takahata_thesis.aux
+The style file: plain.bst
+Database file #1: sample.bib
+Warning--to sort, need author or key in ciber_media
+Warning--to sort, need author or key in docker
+Warning--to sort, need author or key in raspbian
+Warning--can't use both volume and number fields in chromium
+You've used 17 entries,
+            2118 wiz_defined-function locations,
+            612 strings with 6955 characters,
+and the built_in function-call counts, 6708 in all, are:
+= -- 652
+> -- 341
+< -- 5
++ -- 140
+- -- 120
+* -- 539
+:= -- 1053
+add.period$ -- 47
+call.type$ -- 17
+change.case$ -- 111
+chr.to.int$ -- 0
+cite$ -- 21
+duplicate$ -- 228
+empty$ -- 504
+format.name$ -- 120
+if$ -- 1395
+int.to.chr$ -- 0
+int.to.str$ -- 17
+missing$ -- 14
+newline$ -- 84
+num.names$ -- 28
+pop$ -- 119
+preamble$ -- 1
+purify$ -- 94
+quote$ -- 0
+skip$ -- 181
+stack$ -- 0
+substring$ -- 480
+swap$ -- 65
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 68
+warning$ -- 4
+while$ -- 58
+width$ -- 19
+write$ -- 178
+is.kanji.str$ -- 0
+(There were 4 warnings)

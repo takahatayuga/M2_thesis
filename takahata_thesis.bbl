@@ -1,0 +1,101 @@
+\begin{thebibliography}{10}
+
+\bibitem{raspbian}
+Raspbian.
+\newblock https://www.raspbian.org/, Feb. 2020.
+
+\bibitem{ciber_media}
+大阪大学サイバーメディアセンター大規模可視化システム.
+\newblock http://vis.cmc.osaka-u.ac.jp, Feb. 2020.
+
+\bibitem{docker}
+Empowering app development for developers | docker, Dec. 2021.
+
+\bibitem{jpeg2}
+P.~T. {Chiou}, Y.~{Sun}, and G.~S. {Young}.
+\newblock A complexity analysis of the {JPEG} image compression algorithm.
+\newblock In {\em Proceedings of the 9th Computer Science and Electronic
+  Engineering (CEEC2017)}, pages ~65--70, Sep. 2017.
+
+\bibitem{6693038}
+H.~{Chung}, C.~{Andrews}, and C.~{North}.
+\newblock A survey of software frameworks for cluster-based large
+  high-resolution displays.
+\newblock {\em IEEE Transactions on Visualization and Computer Graphics},
+  ~20(~8):~1158--1177, Aug. 2014.
+
+\bibitem{7380571}
+M.~S.~D. {Gupta}, V.~{Patchava}, and V.~{Menezes}.
+\newblock Healthcare based on {I}o{T} using {R}aspberry {P}i.
+\newblock In {\em Proceedings of the International Conference on Green
+  Computing and Internet of Things (ICGCIoT2015)}, pages ~796--799, Oct. 2015.
+
+\bibitem{dxt}
+Petr Holub, Martin Srom, Martin Pulec, Jiri Matela, and Martin Jirman.
+\newblock G{PU}-accelerated {DXT} and {JPEG} compression schemes for
+  low-latency network transmissions of {HD}, 2{K}, and 4{K} video.
+\newblock {\em Future Generation Computer Systems}, ~29:~1991--2006, Oct. 2013.
+
+\bibitem{chromium}
+Greg Humphreys, Mike Houston, Ren Ng, Randall Frank, Sean Ahern, Peter~D.
+  Kirchner, and James~T. Klosowski.
+\newblock Chromium: a stream-processing framework for interactive rendering on
+  clusters.
+\newblock In {\em SIGGRAPH}, volume ~21, pages ~693--702, Jul. 2002.
+
+\bibitem{YCbCr}
+Noor Ibraheem, Mokhtar Hasan, Rafiqul~Zaman Khan, and Pramod Mishra.
+\newblock Understanding color models: A review.
+\newblock {\em ARPN Journal of Science and Technology}, ~2:~265--275, Jan.
+  2012.
+
+\bibitem{displaycluster}
+G.~P. {Johnson}, G.~D. {Abram}, B.~{Westing}, P.~{Navr'til}, and K.~{Gaither}.
+\newblock Displaycluster: an interactive visualization environment for tiled
+  displays.
+\newblock In {\em Proceedings of the 16th International Conference on Cluster
+  Computing}, pages ~239--247, Sep. 2012.
+
+\bibitem{sage}
+L.~Renambot, A.~Rao, R.~Singh, B.~Jeong, N.~Krishnaprasad, V.~Vishwanath,
+  V.~Chandrasekhar, N.~Schwarz, A.~Spale, C.~Zhang, G.~Goldmana, J.~Leigh, and
+  A.~Johnson.
+\newblock {SAGE} : the scalable adaptive graphics environment.
+\newblock {\em Proceedings of the 4th Workshop on Advanced Collaborative
+  Environments (WACE2004)}, Sep. 2004.
+
+\bibitem{sage2}
+Luc Renambot, Thomas Marrinan, Jillian Aurisano, Arthur Nishimoto, Victor
+  Mateevitsi, Krishna Bharadwaj, Lance Long, Andy Johnson, Maxine Brown, and
+  Jason Leigh.
+\newblock {SAGE2}: A collaboration portal for scalable resolution displays.
+\newblock {\em Future Generation Computer Systems}, ~54:~296--305, Jan. 2016.
+
+\bibitem{pccluster}
+Luciano Soares, Bruno Raffin, and Joaquim Jorge.
+\newblock P{C} clusters for virtual reality.
+\newblock {\em IJVR}, ~7:~67--80, Jul. 2008.
+
+\bibitem{jpeg}
+G.~K. {Wallace}.
+\newblock The {JPEG} still picture compression standard.
+\newblock {\em IEEE Transactions on Consumer Electronics}, ~38(~1):~18--34,
+  Feb. 1992.
+
+\bibitem{signage}
+{中村} {伊知哉}.
+\newblock デジタルサイネージの動向.
+\newblock {\em 情報管理}, ~55(~12):~891--898, Mar. 2013.
+
+\bibitem{displayport}
+長野 英生.
+\newblock Displayport.
+\newblock {\em 映像情報メディア学会誌}, ~66(~11):~942--945, May 2012.
+
+\bibitem{130007722836}
+小林 敬.
+\newblock
+  Io{T}を指向したシングルボードコンピュータの食品成分分析およびセンシングへの応用.
+\newblock {\em 日本食品工学会誌}, ~20(~3):~107--113, Oct. 2019.
+
+\end{thebibliography}

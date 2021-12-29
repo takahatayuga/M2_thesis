@@ -1,0 +1,153 @@
+%%% For the change to documentclass from documentstyle
+%%%                                 2013/10/26 Toru Fujiwara
+%%% usage
+%%%    \documentclass[12pt,a4paper]{jbook}
+%%%    \usepackage{mm-thesis}
+%%%
+%%%\input{jbook.sty}
+%%%\input{jbk12.sty}
+%%%\input{a4j.sty}
+%%%
+
+\oddsidemargin 0mm
+\evensidemargin 0mm
+
+%%% end of modification
+\textheight 24.5cm
+\topmargin -1.3cm
+\textwidth=16cm
+\footskip 15mm
+%%%\def\baselinestretch{1.23}
+\def\baselinestretch{1.2}
+\pagestyle{plain}
+
+\def\chapter{\newpage\@startsection {chapter}{1}{\z@}{1.75ex plus .5ex minus 
+ .1ex}{1.25ex plus .1ex}{\large\bf}}
+\def\section{\@startsection {section}{1}{\z@}{1.75ex plus .5ex minus 
+ .1ex}{1.25ex plus .1ex}{\normalsize\bf}}
+\def\subsection{\@startsection{subsection}{2}{\z@}{1.6ex plus .5ex minus 
+ .1ex}{.75ex plus .1ex}{\normalsize\bf}}
+\def\subsubsection{\@startsection{subsubsection}{3}{\z@}{1.6ex plus 
+ 1ex minus .1ex}{.75ex plus .1ex}{\normalsize\bf}}
+\def\paragraph{\@startsection
+ {paragraph}{4}{\z@}{1.6ex plus .5ex minus .1ex}{-1em}{\normalsize\bf}}
+\def\subparagraph{\@startsection
+ {subparagraph}{4}{\parindent}{1.6ex plus .5ex minus 
+ .1ex}{-1em}{\normalsize\bf}}
+
+
+%\leftmargini 2.5em
+%\leftmarginii 2.2em \leftmarginiii 1.87em \leftmarginiv 1.7em \leftmarginv 1em
+%\leftmarginvi 1em
+%\leftmargin\leftmargini
+%\labelwidth\leftmargini\advance\labelwidth-\labelsep
+%\labelsep .5em
+%\def\@listI{\leftmargin\leftmargini \parsep 1pt plus 2pt minus 1pt\topsep
+%1pt plus 3pt minus 5pt\itemsep 0pt plus 2pt minus 1pt}
+%\let\@listi\@listI
+%\@listi 
+%\def\@listii{\leftmargin\leftmarginii
+% \labelwidth\leftmarginii\advance\labelwidth-\labelsep
+% \topsep 0pt plus 2pt minus 1pt
+% \parsep 0pt plus 1pt minus 1pt
+% \itemsep \parsep}
+%\def\@listiii{\leftmargin\leftmarginiii
+% \labelwidth\leftmarginiii\advance\labelwidth-\labelsep
+% \topsep 0pt plus 1pt minus 1pt 
+% \parsep \z@ \partopsep 0pt plus 0pt minus 1pt
+% \itemsep \topsep}
+%\def\@listiv{\leftmargin\leftmarginiv
+% \labelwidth\leftmarginiv\advance\labelwidth-\labelsep}
+%\def\@listv{\leftmargin\leftmarginv
+% \labelwidth\leftmarginv\advance\labelwidth-\labelsep}
+%\def\@listvi{\leftmargin\leftmarginvi
+% \labelwidth\leftmarginvi\advance\labelwidth-\labelsep}
+
+
+\def\bachelor{1}\def\master{2}
+\def\thesis#1{
+\if#1\bachelor
+  \def\thesistitle{卒業研究報告書}
+  \def\ethesistitle{Bachelor Thesis}
+  \def\affiliation{大阪大学 工学部 情報システム工学科}
+\else
+  \def\thesistitle{大学院博士前期課程修士学位論文}
+  \def\ethesistitle{Master Thesis}
+  \def\affiliation{大阪大学 大学院情報科学研究科 \\ マルチメディア工学専攻}
+\fi
+}
+
+\def\title#1{\gdef\@title{#1}}
+\def\etitle#1{\gdef\@etitle{#1}}
+\def\author#1{\gdef\@author{#1}}
+\def\eauthor#1{\gdef\@eauthor{#1}}
+\def\supervisor#1{\gdef\@supervisor{#1}}
+\def\esupervisor#1{\gdef\@esupervisor{#1}}
+\def\deadline#1{\gdef\@deadline{#1}}
+\long\def\abstract#1{\long\gdef\@abstract{#1}}
+\long\def\eabstract#1{\long\gdef\@eabstract{#1}}
+\def\keyword#1{\gdef\@keyword{#1}}
+\def\ekeyword#1{\gdef\@ekeyword{#1}}
+
+\def\coverpage{\newpage\null
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+{\Large\bf\thesistitle}\\
+\vspace*{20mm}
+{\large 題~~~~~目}\\
+\vspace*{5mm}
+{\Large\bf\@title}\\
+\vspace*{30mm}
+指導教員\\ \@supervisor\\
+\vspace*{20mm}
+報告者 \\ \@author\\
+\vspace*{15mm}
+\@deadline\\
+\vspace*{15mm}
+\affiliation\\
+\end{center}
+\vspace*{\fill}
+\newpage
+\pagenumbering{roman}
+\begin{flushleft}\thesistitle\end{flushleft}
+\vspace*{2mm}
+\begin{flushleft}{\large \@title}\end{flushleft}
+\begin{flushright}\@author\end{flushright}
+\vspace*{2mm}
+\begin{flushleft}{\bf 内容梗概}\\ \end{flushleft}
+\vspace*{2mm}
+
+\@abstract
+\vspace*{5mm}
+\begin{flushleft}{\bf キーワード}\\ \end{flushleft}
+\@keyword
+
+}
+
+\newcommand{\body}{\newpage\pagenumbering{arabic}}
+\newcommand{\acknowledgement}{
+        \chapter*{謝辞\addcontentsline{toc}{chapter}{謝辞}}}
+\def\thebibliography#1{\chapter*{参考文献\@mkboth
+ {参 考 文 献}{参 考 文 献}\addcontentsline{toc}{chapter}{参考文献}}\list
+ {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+ \advance\leftmargin\labelsep
+ \usecounter{enumi}}
+ \def\newblock{\hskip .11em plus .33em minus .07em}
+ \sloppy
+ \sfcode`\.=1000\relax}
+\let\endthebibliography=\endlist
+\def\appendix{\@ifnextchar[{\@appendix}{\@appendix[]}}
+\def\@appendix[#1]{\chapter*{付録#1\addcontentsline{toc}{chapter}{付録#1}}}
+
+\title{●}
+\etitle{●}
+\author{●}
+\eauthor{●}
+\supervisor{●}
+\esupervisor{●}
+\deadline{●年●月●日}
+\abstract{●}
+\eabstract{●}
+\keyword{●}
+\ekeyword{●}
