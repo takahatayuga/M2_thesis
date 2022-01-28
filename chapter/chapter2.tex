@@ -103,6 +103,61 @@ SBCにはRaspberry Piシリーズを代表として，様々な種類のもの�
 表2.1に主なSBCの機種とその仕様を示す．
 また，図2.3に主なSBCの画像を示す．
 
+\begin{table}[H]
+  \caption{SBC機種の仕様および価格}
+  \begin{center}
+  \begin{tabular}{cccc}
+  \hline
+  機種 & \begin{tabular}{c}Raspberry Pi 4 \\ Model B \cite{model4B} \end{tabular} & \begin{tabular}{c}Orange Pi \\ Zero Plus2 \cite{orengepi} \end{tabular} & \begin{tabular}{c} Banana Pi \\ BPI-M64 \cite{bananapi} \end{tabular}\\ \hline\hline
+  CPU & \begin{tabular}{c}ARM Cortex-72 \\ (1.5 GHz×4)\end{tabular} &  \begin{tabular}{c}ARM Cortex-A53 \\ (1.8 GHz×4) \end{tabular} & \begin{tabular}{c} ARM Cortex-A53 \\ (1.2 GHz × 4) \end{tabular} \\ \hline
+  GPU & \begin{tabular}{c}Broadcom VideoCore \\ IV (500 MHz) \end{tabular} & \begin{tabular}{c} Mali T720MP2 \\ (650 MHz) \end{tabular} & \begin{tabular}{c} Mali-400 MP2 \\ (500 MHz) \end{tabular} \\ \hline
+  メモリ & 4.0 GB & 4.0 GB & 8.0 GB \\ \hline
+  通信帯域 & 1 Gbps & 100 Mbps & 1 Gbps \\  \hline
+  映像出力端子 & HDMI × 2 & HDMI × 1 & HDMI × 1 \\ \hline
+  OS & Linux & Linux & Linux \\  \hline
+  価格 & 約8,000円 & 約14,000円 & 約9,000円 \\ \hline
+
+  \end{tabular}
+  \end{center}
+\end{table}
+
+
+\begin{figure}[htbp]
+  \begin{center}
+    \begin{tabular}{c}
+
+      % 1
+      \begin{minipage}{0.33\hsize}
+        \begin{center}
+          \includegraphics[clip, width=4.5cm]{./fig/raspi4b.eps}
+          \hspace{1.6cm} Raspberry Pi Model 4 B \cite{model4B}
+        \end{center}
+      \end{minipage}
+
+      % 2
+      \begin{minipage}{0.33\hsize}
+        \begin{center}
+          \includegraphics[clip, width=6.0cm]{./fig/orenge_pi.eps}
+          \hspace{1.6cm} Orange Pi Zero Plus2 \cite{orengepi}
+        \end{center}
+      \end{minipage}
+
+      % 3
+      \begin{minipage}{0.33\hsize}
+        \begin{center}
+          \includegraphics[clip, width=4.5cm]{./fig/banana_pi.eps}
+          \hspace{1.6cm} Banana Pi BPI-M64 \cite{bananapi}
+        \end{center}
+      \end{minipage}
+
+    \end{tabular}
+    \caption{主なSBCの画像}
+    \label{fig:lena}
+  \end{center}
+\end{figure}
+
+
+
 SBCが持つCPUの特徴としては，主に低周波数のコアがデュアルコア，クアッドコアなどの形式で複数搭載されているものが多い．
 これは消費電力を抑えるため，また価格を低く抑えるためであり，こうした省電力や低価格という特徴を維持しつつCPU自体の処理能力を向上させる目的で，近年ではコア数の増加が進んでおり，マルチコア方式を採用した機種が多く販売されるようになってきている．
 搭載メモリや通信帯域に関しては，近年のSBCの性能向上により4.0 GB以上の比較的大きなメモリ容量を持つものも増えており，ギガビットイーサネットに対応したNICを有するものも多く発売されるようになってきている．
@@ -123,6 +178,13 @@ SBCが持つCPUの特徴としては，主に低周波数のコアがデュア�
 先行研究で構築されたマルチディスプレイシステムは，1台のヘッドノードと，SBCを用いて実装された複数台のディスプレイノードで構成されている．
 システムの概要を図2.4に示す．
 
+\begin{figure}[H]
+  \hspace*{\fill}
+  \includegraphics[width=\linewidth]{./fig/system_4.eps}
+  \hspace*{\fill}
+  \caption{先行研究システムの概要図}
+ \end{figure}
+
 このマルチディスプレイシステムは，2.1.2節で述べた2種類の方式のうち，フレーム転送方式を採用している．
 そのため，SBCをディスプレイノードとして用いることとなり，従来のフレーム転送方式をそのまま適用するとSBC上で負荷の高い処理を行う必要がある．
 しかし，SBCは市販の汎用PCなどと比べると処理速度，描画性能などの面で劣っているため，可能な限りディスプレイノード上での処理負荷を小さく抑えなければならないという制約が存在する．
@@ -141,6 +203,15 @@ SBCが持つCPUの特徴としては，主に低周波数のコアがデュア�
 受信スレッドは，ヘッドノードから圧縮フレームを受信する．
 展開スレッドは，圧縮フレームの展開を行う．
 表示スレッドは，ヘッドノードからの表示命令を受け取りフレームをディスプレイ上に表示する．
+
+\begin{center}
+  \begin{figure}[H]
+      \hspace*{\fill}
+      \includegraphics[width=1.1\linewidth]{./fig/frow_system.eps}
+      \hspace*{\fill}
+      \caption{各スレッドの動作}
+  \end{figure}
+  \end{center}
    
 
 \subsection{フィードバック処理}
