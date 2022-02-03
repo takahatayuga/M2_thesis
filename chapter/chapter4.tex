@@ -5,14 +5,87 @@
 実験環境について書く
 使用機器，使用ネットワーク帯域，使用動画ファイル，OS，モジュールなど
 
-\section{CPU使用率の評価}
+\begin{table}[H]
+    \caption{ヘッドノード用デスクトップPCの仕様}
+    \begin{center}
+    \begin{tabular}{cc}
+    \hline
+    要素 & 仕様 \\\hline\hline
+    CPU & i7-5960X (3.0 GHz×8) \\ \hline
+    メモリ & 64.0 GB \\ \hline
+    通信帯域 & 1 Gbps \\ \hline
+    OS & CentOS 7.3 \\ \hline
+
+    \end{tabular}
+    \end{center}
+\end{table}
+
+評価に用いる映像としては，クリエイティブ・コモンズ・ライセンスのもとで利用できる3DアニメーションであるBig Buck Bunny \cite{bigbackbunny}を使用した．
+表4.4に，Big Buck Bunnyのプロパティを示す．さらに，図4.3にBig Buck Bunny再生時のスクリーンショットを示す．
+
+\begin{table}[htbp]
+    \caption{Big Buck Bunnyのプロパティ}
+    \begin{center}
+    \begin{tabular}{cc}
+    \hline
+    項目 & 内容 \\\hline\hline
+    動画形式　& MP4 \\ \hline
+    コーデック & H.264 \cite{h264} \\ \hline
+    長さ & 10分34秒 \\ \hline
+    総フレーム数 & 19020枚 \\ \hline
+    フレームレート & 30 fps \\ \hline
+    解像度 & 4K (3840×2160) \\ \hline
+
+    \end{tabular}
+    \end{center}
+\end{table}
+
+\begin{figure}[H]
+    \hspace*{\fill}
+    \includegraphics[width=\linewidth]{./fig/bigbuckbunny.eps}
+    \hspace*{\fill}
+    \caption{Big Buck Bunnyのスクリーンショット}
+   \end{figure}
+
+ヘッドノードで行われる処理の実装には，OpenCV \cite{opencv}, libjpeg-turbo ~\cite{libjpeg}, Boost.Asio \cite{asio}という3種類のライブラリを利用した． 
+OpenCVは画像処理ライブラリ，libjpeg-turboはJPEGの圧縮と展開を行うライブラリ，Boost.Asioはソケット通信を行うライブラリである．
+また，ディスプレイノードの処理の実装にはlibjpeg-turbo, Boost.Asio, fbdevを利用した．
+実装にはC++言語を使用し，GCCコンパイラ (GNU C Compiler) \cite{gcc}でコンパイルを行った．
+
+\begin{figure}[H]
+    \hspace*{\fill}
+    \includegraphics[width=\linewidth]{./fig/evaluation_environment.eps}
+    \hspace*{\fill}
+    \caption{実験環境のコンテナ構成}
+   \end{figure}
+
+\section{フレーム処理時間の評価}
+
+\subsection{実験方法}
+先行研究で提案された手法と提案手法において，4面構成のMDを想定した環境で4K解像度の画像を表示し，動画のフレーム開始から1000フレーム目の処理が終了するまでの1フレームあたりに要するフレーム処理時間を計測した．
+図4.6に先行研究で提案されたシステムと提案手法でのフレーム処理時間を示す．
+
+\subsection{実験結果}
+
+既存手法ではヘッドノードでのフレーム処理時間の平均が52.35msであったのに対し，提案手法では21.72msとなっており，フレーム処理時間が既存手法と比較して40\%程度まで短縮された事が確認できた．
+
+また，本提案で新たに生じた処理である共有メモリを用いたプロセス間での画像フレームデータ受け渡しに要する時間も平均で1ms未満となっており，オーバーヘッドは非常に小さくなっていることも確認できる．
+
+以上の結果より，フレーム処理プロセスの並列化を行った提案手法によって，システムのボトルネックが解消された．
+
+\begin{figure}[H]
+    \hspace*{\fill}
+    \includegraphics[width=\linewidth]{./fig/processing_time_evaluation_4k.eps}
+    \hspace*{\fill}
+    \caption{フレーム処理時間の比較}
+   \end{figure}
+
+\section{フレーム処理速度の評価}
+
+
 
 \subsection{実験方法}
 
 \subsection{実験結果}
 
-\section{フレームレートの評価}
-
-\subsection{実験方法}
-
-\subsection{実験結果}
+\subsection{結果に対する考察}
