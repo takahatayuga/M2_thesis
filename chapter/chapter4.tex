@@ -58,6 +58,25 @@ OpenCVは画像処理ライブラリ，libjpeg-turboはJPEGの圧縮と展開を
 また，ディスプレイノードの処理の実装にはlibjpeg-turbo, Boost.Asio, fbdevを利用した．
 実装にはC++言語を使用し，GCCコンパイラ (GNU C Compiler) \cite{gcc}でコンパイルを行った．
 
+
+\begin{table}[htbp]
+    \caption{評価で利用したソフトウェア}
+    \begin{center}
+    \begin{tabular}{cc}
+    \hline
+    ソフトウェア名 & バージョン \\\hline\hline
+    OpenCV & 3.4.5/ \\ \hline
+    Boost.Asio \cite{h264} & 1.53  \\ \hline
+    FFMPEG & 2.8.17 \\ \hline
+    libjpeg-turbo & 2.0.1 \\ \hline
+    Gstreamer & 1.16.1 \\ \hline
+    GCC & 8.5.0 \\ \hline
+
+    \end{tabular}
+    \end{center}
+\end{table}
+
+
 \begin{figure}[H]
     \hspace*{\fill}
     \includegraphics[width=\linewidth]{./fig/chap4/evaluation_environment.eps}
@@ -94,6 +113,9 @@ OpenCVは画像処理ライブラリ，libjpeg-turboはJPEGの圧縮と展開を
     \caption{フレーム処理時間の比較 (9面構成時)}
 \end{figure}
 
+\section{コンテナの起動時間に関する評価}
+
+\section{CPU使用率に関する評価}
 \section{MDのコンテナ化の評価}
 本節では，マルチディスプレイシステムのコンテナ化を行った実験について記す．
 
