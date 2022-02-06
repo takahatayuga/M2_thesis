@@ -125,12 +125,58 @@ OpenCVは画像処理ライブラリ，libjpeg-turboはJPEGの圧縮と展開を
 \section{CPU使用率に関する評価}
 \section{MDのコンテナ化の評価}
 本節では，マルチディスプレイシステムのコンテナ化を行った実験について記す．
+本実験は，先行研究において提案された，SBCマルチディスプレイシステムの完全なコンテナ仮想化についての可能性を探るためのものである．
+マルチディスプレイシステムを構成する各ノードに仮想化環境を導入し，その環境上で各ノードのプロセスを動作させることにより，異なるSBCをディスプレイノードとして使用した場合にもアーキテクチャ・仕様の差異を吸収して同一の環境で動作させることが可能となる．
+本実験では，SBCの一種であり，Dockerが標準的にサポートされているJetson Nano \cite{jetson}をディスプレイノードとして使用し，仮想環境上でノードプロセスを動作させた場合におけるマルチディスプレイシステム全体のパフォーマンスを計測した．
 
+\subsection*{実験環境}
+実験4に用いた実験兼環境について説明する．
+ヘッドノードは実験1で用いたもののと同様のものを使用している．
+ディスプレイノードにはSBCの一種であるJetson Nanoを用いた．
+図xxxにJetson Nanoの画像を，表xxxに仕様を示す．
 
-\subsection{実験方法}
+\begin{figure}[H]
+    \hspace*{\fill}
+    \includegraphics[width=60mm]{./fig/chap4/jetson.eps}
+    \hspace*{\fill}
+    \caption{Jetson Nano}
+\end{figure}
 
+\begin{table}[H]
+    \caption{Jetson Nanoの仕様}
+    \begin{center}
+    \begin{tabular}{cc}
+    \hline
+    要素 & 仕様 \\\hline\hline
+    CPU & ARM Cortex-A57(4コア/1.43GHz) \\ \hline
+    GPU & CUDAコア128基/Maxwellアーキテクチャ/472GFLOPS \\ \hline
+    メモリ & 4GB/64bit LPDDR4 \\ \hline
+    OS & Jetson Nano Developer Kit(Ubuntu 18.04 LTS)\\ \hline
 
-\subsection{実験結果}
+    \end{tabular}
+    \end{center}
+\end{table}
+
+実験の際にはJetson Nano4台をディスプレイノードとして使用し，ディスプレイ4面構成のマルチディスプレイシステムを構築した．
+ヘッドノードとディスプレイノード群の間には1台のイーサネットスイッチ (1Gbps)が接続されている．
+本実験で用いた評価環境の図を図4.2に示す．
+
+\begin{figure}[H]
+    \hspace*{\fill}
+    \includegraphics[width=\linewidth]{./fig/chap4/jikken4.eps}
+    \hspace*{\fill}
+    \caption{実験4で用いた実験環境}
+\end{figure}
+
+なお，評価に用いた映像，ソフトウェアなどは全て実験1と同様のものである．
+
+\subsection*{実験方法}
+4面構成のマルチディスプレイにおいて，先行研究で提案されたミドルウェアをヘッドノード，ディスプレイノードそれぞれに構築した仮想環境上で
+動作させ，動画表示のフレームレートを計測した．
+また，動作時の目標フレームレートは動画本来のフレームレートである30fpsに設定した．
+
+\subsection*{実験結果}
+図xxxに，仮想環境上において先行研究で提案されたミドルウェアを動作させた場合のフレームレートの時間変化を示す．
 
 \begin{figure}[H]
     \hspace*{\fill}
@@ -139,6 +185,7 @@ OpenCVは画像処理ライブラリ，libjpeg-turboはJPEGの圧縮と展開を
     \caption{フレームレートの時間変化}
 \end{figure}
 
+実験の結果，マルチディスプレイ上に4K解像度の映像を表示した場合におけるフレームレートの平均値は，22.55fpsであった．
+この結果から，各ノードを仮想化環境上で構築した際においても，動作時のフレームレートは大きく変化していない事が確認できた．
 
-
-\subsection{結果に対する考察}
+\subsection*{結果に対する考察}
