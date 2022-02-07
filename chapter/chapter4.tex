@@ -58,7 +58,7 @@
     \caption{Big Buck Bunnyのスクリーンショット}
    \end{figure}
 
-ヘッドノードで行われる処理の実装には，OpenCV \cite{opencv}, libjpeg-turbo ~\cite{libjpeg}, Boost.Asio \cite{asio}，gstreamer \cite{gstreamer} という4種類のライブラリを利用した． 
+ヘッドノードで行われる処理の実装には，OpenCV \cite{opencv}, libjpeg-turbo ~\cite{libjpeg}, Boost.Asio \cite{asio}，gstreamer \cite{gstreamer} , FFMPEG \cite{ffmpeg}という4種類のライブラリを利用した． 
 OpenCVは画像処理ライブラリ，libjpeg-turboはJPEGの圧縮と展開を行うライブラリ，Boost.Asioはソケット通信を行うライブラリであり，gstreamerはオープンソースのマルチメディアフレームワークである．
 また，ディスプレイノードの処理の実装にはlibjpeg-turbo, Boost.Asio, fbdevを利用した．
 実装にはC++言語を使用し，GCCコンパイラ (GNU C Compiler) \cite{gcc}でコンパイルを行った．
@@ -71,7 +71,7 @@ OpenCVは画像処理ライブラリ，libjpeg-turboはJPEGの圧縮と展開を
     \hline
     ソフトウェア名 & バージョン \\\hline\hline
     OpenCV & 3.4.5/ \\ \hline
-    Boost.Asio \cite{h264} & 1.53  \\ \hline
+    Boost.Asio  & 1.53  \\ \hline
     FFMPEG & 2.8.17 \\ \hline
     libjpeg-turbo & 2.0.1 \\ \hline
     Gstreamer & 1.16.1 \\ \hline
