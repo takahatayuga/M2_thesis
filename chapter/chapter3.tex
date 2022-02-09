@@ -237,7 +237,7 @@ memcpy()関数によるメモリのコピーは非常に高速に動作するた
     \hspace*{\fill}
     \includegraphics[width=\linewidth]{./fig/chap3/shared_memory2.eps}
     \hspace*{\fill}
-    \caption{共有メモリの使用例2}
+    \caption{共有メモリの使用例}
     \label{shared_memory2}
 \end{figure}
 
@@ -251,13 +251,14 @@ memcpy()関数によるメモリのコピーは非常に高速に動作するた
 このIPCキーの共有にはホストマシンのメモリ領域を利用している．
 まず，分割ノードにより共有メモリの作成に使用されたIPCはあらかじめ設定されたパスに存在する物理マシン内のテキストファイルに文字列として保存される．
 その後起動された圧縮コンテナが物理マシン内の該当パスに存在するフォルダを認識し，その中に記述されているIPCキーを引数としてコンテナ内でプログラムを実行する．
-この仕組みによって分割コンテナと圧縮コンテナとの間でIPCキーを共有することができ，同一のメモリ領域にアクセスする事が可能になる．
+この仕組みによって分割コンテナと圧縮コンテナとの間でIPCキーを共有することができ，同一のメモリ領域にアクセスする事が可能になる（図\ref{key_share}）．
 
 \begin{figure}[H]
     \hspace*{\fill}
     \includegraphics[width=\linewidth]{./fig/chap3/ipckeyshare.eps}
     \hspace*{\fill}
-    \caption{共有メモリの使用例2}
+    \caption{プロセス間でのIPCキー共有}
+    \label{key_share}
 \end{figure}
 
 共有メモリ領域では，フレームの格納および取り出しを高速で行うために，分割コンテナによって格納された分割済みの画像フレームデータをバッファリングする仕組みを用意する．
